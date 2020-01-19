@@ -1,2 +1,4 @@
 hello
 changing content wthin file inside branch2
+while changes are stashed in branch1
+adding more content in branch2.txt
