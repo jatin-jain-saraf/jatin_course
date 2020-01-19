@@ -1,2 +1,3 @@
 hello
 changing some content 
+adding change and using stash command
