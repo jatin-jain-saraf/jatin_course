@@ -1,0 +1,37 @@
+LAB EXERCISE - 1
+
+1.    $ pwd
+       $ ls -alh
+
+2.    $ mkdir -p {intern-2020,rapidops-2020}
+
+3.    $ touch intern-2020/dev.txt intern-2020/helloworld.txt
+
+4.    $ man sudo > intern-2020/dev.txt
+       $ echo “helloworld” > helloworld.txt
+
+5.    $ cp intern-2020/dev.txt intern-2020/helloworld.txt rapidops-2020
+
+6.    $ cd rapidops-2020
+       $ mv dev.txt d.txt | mv helloworld.txt h.txt
+
+7.    $ chmod u-w d.txt
+       $ chmod 764 h.txt
+
+8.    $ tar -cvf rd.tar d.txt h.txt && cd ../intern-2020
+
+9.    $ cp ../rapidops-2020/rd.tar && rm ../rapidops-2020/rd.tar
+
+10.   $ find / -name dev.txt
+11.   $ top
+
+12.   $ df -h
+
+13.   $ ps -aef
+        $ ps 11223
+
+14.   $ wget https://releases.mattermost.com/desktop/4.3.2/mattermost-desktop-4.3.2-linux-i386.deb
+
+15.   $ ifconfig
+              or
+        $ netstat -ie
