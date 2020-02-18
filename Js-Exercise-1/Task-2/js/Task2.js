@@ -26,11 +26,9 @@ function show() {
     for (let i = 0; i < user.length; i++) {
         let FirstName = user[i].firstName;
         let LastName = user[i].lastName;
-        let x = FirstName.toString();
-        let y = LastName.toString();
         tbody.innerHTML += `<tr>
-							<td>${x}</td>
-							<td>${y}</td>
+							<td>${FirstName}</td>
+							<td>${LastName}</td>
 							<td><span onclick = "edit(${i})"><i class="fas fa-edit"></i></span></td>
 							<td><span onclick = "del(${i})"> <i class="fas fa-trash"></i></span></td>
 							</tr>`;
