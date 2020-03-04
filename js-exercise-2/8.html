@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Enter start date : <input id="StartDate" type="date"></h3>
+    <h3>Enter start date : <input id="EndDate" type="date"></h3>
+    <button id="btn">Submit</button>
+    <div id="res"></div>
+    <script>
+        let StartDate = document.getElementById("StartDate")
+        let EndDate = document.getElementById("EndDate")
+        document.getElementById("btn").addEventListener('click', (event) => {
+            let a = StartDate.value;
+            let b = EndDate.value;
+            let StartTimeStamp = new Date(a).getTime()
+            let EndTimeStamp = new Date(b).getTime()
+            let DiffTimestamp = EndTimeStamp - StartTimeStamp;
+            a = a.split('-');
+            b = b.split('-');
+            let newStartDate = a[2] + "/" + a[1] + "/" + a[0]
+            let newEndDate = b[2] + "/" + b[1] + "/" + b[0];
+
+            let year = b[0] - a[0]
+
+            let date = new Date(DiffTimestamp).getDate() - 1;
+
+            let month = new Date(DiffTimestamp).getMonth();
+            document.getElementById("res").innerHTML = ` Difference of ${date} Days ${month} Months ${year} Years`
+
+        })
+
+
+    </script>
+</body>
+
+</html>

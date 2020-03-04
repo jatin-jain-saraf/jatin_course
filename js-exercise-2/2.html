@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+
+<body>
+    <h1> Given Number is :-<span id="num"></span></h1>
+    <h2>Output is :- <span id="res"></span></h2>
+    <script>
+        let numString = ''
+        count = 0;
+        let num = prompt("Enter the number", "1223445");
+        if (isNaN(num)) {
+            alert("its not a number and please refresh this page")
+        } else {
+            document.getElementById('num').innerHTML = num;
+            for (let i of num) {
+                if (i % 2 === 0) {
+                    count++;
+                    if (count >= 2) {
+                        numString = numString + '-' + i;
+                    } else(
+                        numString += i
+                    )
+                } else {
+                    count = 0;
+                    numString += i;
+                }
+            }
+        }
+
+        console.log(numString)
+        document.getElementById('res').innerHTML = numString;
+    </script>
+</body>
+
+</html>

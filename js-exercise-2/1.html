@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+
+<body>
+    <p id="Arr"></p>
+    <p id="pp"></p>
+
+    <script>
+        let str = prompt("enter numbers");
+        let arr = str.split("");
+        let n = prompt("enter the number ", "1");
+        let Arr = document.getElementById("Arr")
+
+        Arr.innerHTML = `Array is [${arr}]`
+
+        function display(arr, n) {
+
+            let f = arr.slice(0, n);
+            let l = arr.slice(arr.length - n, arr.length);
+            document.getElementById("pp").innerHTML = " Starting Element of array: " + f + "<br>" + "Ending Elements of array: " + l;
+        }
+        display(arr, n);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+
+<body>
+    <input type="text" id="First">
+    <input type="text" id="Second">
+    <button onclick="Union()">Union</button>
+    <button onclick="Diff()">Difference </button>
+    <h2 id="res"></h2>
+    <script>
+        let First = document.querySelector('#First')
+        let Second = document.querySelector('#Second')
+        let res = document.querySelector('#res')
+
+        let union = ''
+        let diff = ''
+        let Union = () => {
+            union = First.value
+            for (let i of Second.value) {
+                if (!union.includes(i)) {
+                    union += i;
+                }
+            }
+            res.innerHTML = `Union is ${union}`
+            First.value = ''
+            Second.value = ''
+
+        }
+        let Diff = () => {
+            for (let i of First.value) {
+                if (!Second.value.includes(i)) {
+                    diff += i;
+                }
+            }
+            res.innerHTML = `Difference is ${diff}`
+
+            First.value = ''
+            Second.value = ''
+        }
+    </script>
+</body>
+
+</html>

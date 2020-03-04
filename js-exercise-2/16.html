@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Enter The Integer :- <input id="inpt" type="number"></h2>
+    <button onclick="seperate()">Seperate</button>
+    <h2 id="otpt"></h2>
+    <script>
+        let reverse = (str) => {
+            let arr = str.split("")
+            let arrRev = arr.reverse();
+            let revstr = arrRev.join("")
+            return revstr
+
+        }
+        let inpt = document.getElementById("inpt")
+        let otpt = document.getElementById("otpt")
+        let seperate = () => {
+            if (inpt.value.length <= 3) {
+                otpt.innerHTML = `${inpt.value}`
+            } else {
+                let revStr = reverse(inpt.value)
+                let finalStr = ''
+
+                for (let i = 0; i < inpt.value.length; i++) {
+                    if (i == 3) {
+                        finalStr += ','
+                        finalStr += revStr[i]
+
+                    } else if (i > 3 && i % 2 != 0) {
+                        finalStr += ','
+                        finalStr += revStr[i]
+
+                    } else {
+                        finalStr += revStr[i]
+                    }
+                }
+                otpt.innerHTML = `${reverse(finalStr)}`
+                
+            }
+        }
+
+    </script>
+</body>
+
+</html>

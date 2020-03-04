@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6</title>
+</head>
+
+<body>
+    <form action="">
+        <div>Enter the start Point <input type="text" id="start"></div>
+        <div> Enter the End Point <input type="text" id="end"></div>
+        <div>Enter the Difference<input type="number" id="diff"></div>
+        <button onclick="print()">Print</button>
+    </form>
+    <p id="res"></p>
+    <script>
+        let start = document.querySelector('#start')
+        let end = document.querySelector('#end')
+        let diff = document.querySelector('#diff')
+        let res = document.querySelector('#res')
+
+        let print = () => {
+            let CheckResult = checkValue();
+
+            if (CheckResult === 'small' || CheckResult === 'capital') {
+                if (start.value.length == 1 && end.value.length == 1) {
+                    for (let i = start.value.charCodeAt(); i <= end.value.charCodeAt(); i += +diff.value) {
+                        res.innerHTML += `<br>` + String.fromCharCode(i)
+
+                    }
+                }
+            } else {
+                for (let i = +start.value; i <= +end.value; i += +diff.value) {
+                    res.innerHTML += i
+
+                }
+
+            }
+        }
+        let checkValue = () => {
+            let RegExpSmall = /[a-z]/;
+            let RegExpCapital = /[A-Z]/;
+            let RegExpNumber = /[0-9]/;
+
+            if (RegExpSmall.test(start.value) && RegExpSmall.test(end.value)) {
+                return 'small';
+            } else if (RegExpCapital.test(start.value) && RegExpCapital.test(end.value)) {
+
+                return 'capital';
+            } else if (RegExpNumber.test(start.value) && RegExpNumber.test(end.value)) {
+
+                return 'number';
+
+            } else {
+                alert("Please Enter Same Type Of Input....!")
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Enter Your Email Address :-<input id="Email" type="email"></h2>
+    <button onclick="res()">Encrypt</button>
+    <h2 id="hide"></h2>
+    <script>
+        let email = document.getElementById("Email")
+        let hide = document.getElementById('hide')
+        let res = () => {
+
+            let index = email.value.indexOf("@");
+            console.log(index);
+            let str = ''
+            for (let i = 0; i < email.value.length; i++) {
+                if (i > 3 && i < index-1) {
+                    str += "*"
+                } else {
+                    str += email.value[i]
+                }
+            }
+            console.log(str)
+            hide.innerHTML = `${str}`
+        }
+
+
+    </script>
+</body>
+
+</html>

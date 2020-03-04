@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+    <h2>Enter the number of rows:- <input id="rows" type="number"></h2>
+    <h2>Enter the number of coloumn:- <input id="colum" type="number"></h2>
+    <button onclick="print()">Print</button>
+
+    <table id="otpt"class="table table-border">
+
+    </table>
+
+    <script>
+        let rows = document.getElementById("rows")
+        let coloumn = document.getElementById("colum")
+        let otpt = document.getElementById("otpt")
+
+        let print = () => {
+            otpt.innerHTML = ''
+            for (let i = 0; i < rows.value; i++) {
+                otpt.innerHTML += `<tr id="${i}"></tr>`
+                for (let j = 0; j < coloumn.value; j++) {
+                    document.getElementById(`${i}`).innerHTML += `<td>${i},${j}</td>`
+
+                }
+            }
+        }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+
+<body>
+    <button id="btn">Random String </button>
+    <p id="res"></p>
+    <script>
+        let str = prompt("enter the array element", "123");
+        let arr = str.split("");
+        let ran
+        let res
+        let findRandom = () => {
+            ran = Math.floor(Math.random() * arr.length);
+            if (!res.includes(ran)) { } else {
+                findRandom();
+            }
+            return ran;
+        }
+        document.querySelector('#btn').addEventListener("click", () => {
+            let Result = []
+            res = []
+            for (let i of arr) {
+                res.push(findRandom());
+            }
+            for (let i of res) {
+                Result.push(arr[i]);
+            }
+            document.getElementById("res").innerHTML =`RANDOM STRING IS ${Result} `
+        })
+    </script>
+</body>
+
+
+</html>

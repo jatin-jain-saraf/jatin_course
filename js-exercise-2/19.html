@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Enter The Positio:- <input id="pos" type="number"></h2>
+    <h2>Enter The name:- <input id="name" type="text"></h2>
+    <h2>Enter The age:- <input id="age" type="number"></h2>
+    <button onclick="AddUser()">Submit</button>
+    <button onclick="DltUser()">Submit</button>
+
+    <h2 id="res"></h2>
+
+    <script>
+        let arr = [
+            {
+
+                name: 'jatin',
+                age: 21
+            },
+            {
+
+                name: 'meet',
+                age: 22
+            },
+            {
+
+                name: 'aman',
+                age: 22
+            },
+            {
+
+                name: 'nawal',
+                age: 23
+            },
+            {
+                name: 'myure',
+                age: 23
+            },
+            {
+                name: 'ravi',
+                age: 23
+            },
+            {
+                name: 'hardick',
+                age: 24
+            },
+            {
+                name: 'dhairya',
+                age: 24
+            },
+            {
+                name: 'darshen',
+                age: 24
+            },
+            {
+
+                name: 'sweeta',
+                age: 24
+            },
+        ];
+        let pos = document.getElementById("pos")
+        let name = document.getElementById("name")
+        let age = document.getElementById("age")
+        let res = document.getElementById("res")
+
+
+        let DltUser = () => {
+            arr.splice(pos.value, 1)
+            res.innerHTML = JSON.stringify(arr)
+            
+
+        }
+        let AddUser = () => {
+            let obj = {
+                name: name.value,
+                age: +age.value
+            }
+            arr.splice(pos.value, 0, obj)
+            res.innerHTML = JSON.stringify(arr)
+
+
+
+        }
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

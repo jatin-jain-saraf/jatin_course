@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Enter The Email Address :- <input id="inpt" type="text"></h2>
+    <button onclick="check()">Check</button>
+    <h2 id="otpt"></h2>
+    <script>
+        let inpt = document.getElementById("inpt")
+        let otpt = document.getElementById("otpt")
+        let regexEmail = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/;
+        let check = () => {
+            
+            if (inpt.value == '') {
+
+                otpt.innerHTML = "Email Can't Be Empty"
+            } 
+            else if (!regexEmail.test(inpt.value)) {
+
+               otpt.innerHTML = "Enter Valid Email "
+            }
+            else {
+                otpt.innerHTML = "Valid"
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

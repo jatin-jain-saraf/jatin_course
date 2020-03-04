@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Enter the String :<input id="str" type="text"></h2>
+    <h2>Enter the Position:- <input id="pos" type="number"></h2>
+    <h2>Enter the String to append <input id="inpt" type="text"></h2>
+    <button onclick="Append()">Append</button>
+    <h3 id="res"></h3>
+    <script>
+        let str = document.getElementById("str")
+        let pos = document.getElementById("pos")
+        let inpt = document.getElementById("inpt")
+        let res = document.getElementById("res")
+        let Append = () => {
+            let arr1 = ''
+            let arr2 = ''
+            for (let i = 0; i < str.value.length; i++) {
+                if (i < pos.value) {
+                    arr1 += str.value[i]
+                } else {
+                    arr2 += str.value[i]
+                }
+            }
+
+            res.innerHTML = arr1+inpt.value+arr2;
+            
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Enter the String with Html/Xml Tags :- <input id="inpt" type="text"></h1>
+    <button onclick="res()">Generate</button>
+    <h1 id="otpt">Output:-</h1>
+    <script>
+        let inpt = document.getElementById("inpt")
+        let otpt = document.getElementById("otpt")
+        let res = () => {
+            otpt.innerHTML = `${inpt.value}`
+        }
+
+    </script>
+</body>
+
+</html>

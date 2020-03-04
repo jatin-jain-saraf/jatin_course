@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 >Open Console</h2>
+    <script>
+        let otpt = document.getElementById("otpt")
+          let arr = [
+            {
+                id:1,
+                name: 'jatin',
+                age: 21,
+                hobbies:['Eating','Travelling','Movies']
+            },
+            {
+                id:1,
+                name: 'Myure',
+                age: 21,
+                hobbies:['Leg-Pulling','Teasing','Travelling']
+            },
+            {
+
+                id:1,
+                name: 'Meet',
+                age: 21,
+                hobbies:['Sun be','Travelling','Movies']
+            },
+            {
+
+                id:1,
+                name: 'Nawal',
+                age: 21,
+                hobbies:['Reading','Travelling','Movies']
+            },
+            {
+                id:1,
+                name: 'Aman',
+                age: 21,
+                hobbies:['writting','Travelling','Movies']
+            }]
+            let obj = {}
+            for (let user of arr){
+                for(let hobby of user.hobbies){
+                    if (obj[hobby]){
+                        obj[hobby].push(user.name)
+                    } else {
+                        obj[hobby]=[user.name]
+                    }
+                }
+
+            }
+      console.log(obj);
+      
+            
+    </script>
+</body>
+</html>

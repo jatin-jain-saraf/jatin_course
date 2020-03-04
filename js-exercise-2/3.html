@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+
+<body>
+    <script>
+        let str = prompt("enter the array element with space ", "1 2 3");
+        let arr = str.split(" ");
+        let obj = {};
+        let max = Math.max();
+        let maxValue = [];
+        for (let i of arr) {
+            let k = Object.keys(obj);
+
+            if (k.includes(i)) {
+                obj[i]++;
+            } else {
+                obj[i] = 1;
+            }
+        }
+        console.log(obj);
+        for (let i in obj) {
+            if (obj[i] > max) {
+                max = obj[i];
+                maxValue = [];
+                maxValue.push(i);
+            } else if (obj[i] == max) {
+                maxValue.push(i);
+            }
+        }
+        console.log(maxValue);
+        alert("most frequent value is " + maxValue.join(',') + " which occured " + max + " times ");
+    </script>
+</body>
+
+</html>

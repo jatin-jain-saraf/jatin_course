@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Enter start date : <input id="StartDate" type="date"></h3>
+    <h3>Enter start date : <input id="EndDate" type="date"></h3>
+    <button id="btn">Submit</button>
+    <div id="res"></div>
+    <script>
+        let StartDate = document.getElementById("StartDate")
+        let EndDate = document.getElementById("EndDate")
+        document.getElementById("btn").addEventListener('click', (event) => {
+            let a = StartDate.value;
+            let b = EndDate.value;
+            let StartTimeStamp = new Date(a).getTime()
+            let EndTimeStamp = new Date(b).getTime()
+            let DiffTimestamp = EndTimeStamp - StartTimeStamp;
+            a = a.split('-');
+            b = b.split('-');
+            let newStartDate = a[2] + "/" + a[1] + "/" + a[0]
+            let newEndDate = b[2] + "/" + b[1] + "/" + b[0];
+
+            let sec = Math.floor(DiffTimestamp/1000);
+            
+            let minut = Math.floor(sec/60);
+            
+            let hours =Math.floor( minut/60);
+         
+            let day = Math.floor(hours /24);
+         
+            let week = Math.floor(day/7);
+        
+            let month = Math.floor(week/4.5);
+           
+            let year = Math.floor(month/12);
+          
+
+            
+            
+
+            document.getElementById("res").innerHTML = ` Difference in Years :- ${year} Years <br> Difference in month  :- ${month} Month <br> Difference in Weeks :- ${week} Weeks <br> Difference in Day :- ${day} Days <br> Difference in hours  :- ${hours} Hours <br> Difference in Minutes  :- ${minut} Minutes <br>   Difference in Seconds  :- ${sec} Seconds `
+         
+
+        })
+
+
+    </script>
+</body>
+
+</html>
