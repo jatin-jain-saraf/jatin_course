@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AdminHome</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+
+<body>
+  <!-- navbar start -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-primary text-light mb-5">
+    <div class="container">
+      <h3>Rapidops</h3>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <blockquote class="" id="role"></blockquote>
+          <button onclick="logout()" class="btn btn-primary btn-outline-light ml-3">Logout</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <!-- navbar end -->
+  <!-- card start -->
+  <div class="container mt-5">
+    <div class="card">
+      <h5 class="card-header bg-secondary mb-3 text-light">Dashboard</h5>
+      <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Manage</button>
+      <!-- model start -->
+      <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Manage Course</h4>
+            </div>
+            <!-- model body -->
+            <div>
+
+              <button class="btn btn-success" data-toggle="modal" data-target="#myAddForm"
+                style="margin-left:10%; margin-top: 4%;">ADD</button>
+              <button class="btn btn-warning" data-toggle="modal" data-target="#removeCourse"
+                style="margin-left:50%; margin-top: 4%;">Remove</button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <!-- moddle footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- model End -->
+      <div class="card-body">
+        <div class="container">
+          <div class="row" id="allCourse">
+
+          </div>
+
+          <!-- Assignment modal -->
+
+          <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Student Names</th>
+                        <th scope="col">Student Email</th>
+                        <th scope="col">#</th>
+
+                    </thead>
+                    <tbody id="assignCourse">
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Assignment modal Finish -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- card end -->
+
+  <!-- MyCourseREmove MOdel -->
+  <div class="modal fade" id="removeCourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="removeCourse">Remove Course</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div id="CourseList" class="modal-body">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <td>courseImg</td>
+              <td>Course-Name</td>
+              <td>Remove Course</td>
+            </tr>
+          </thead>
+          <tbody id="TbodyRemove">
+
+          </tbody>
+          <tfoot>
+
+          </tfoot>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Course remove model end -->
+
+
+
+  <!-- MyAddFormModal start-->
+  <div class="modal fade" id="myAddForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Course</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="form-group row">
+              <label for="courseName" class="col-sm-2 col-form-label">Course-Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="courseName" placeholder="CourseName">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="courseImg" class="col-sm-2 col-form-label">ImageURL</label>
+              <div class="col-sm-10">
+                <input type="url" class="form-control" id="courseImg" placeholder="image url">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="courseLink" class="col-sm-2 col-form-label">Course-URL</label>
+              <div class="col-sm-10">
+                <input type="url" class="form-control" id="courseLink" placeholder="image url">
+              </div>
+            </div>
+            <button id="AddCourse" class="btn btn-danger">Add</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+ <!-- MyAddFormModal End-->
+
+
+  <script src="../js/adminHome.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

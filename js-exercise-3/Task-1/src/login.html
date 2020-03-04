@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+   
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <div class="container bg-light text-white"> 
+        <h1 class="text-center pt-5 pb-5 ">Log In </h1>
+        <form id="" action="home.html">
+
+            <!-- Email -->
+            <div class="  form-group d-flex justify-content-center">
+                <input class="bg-transparent text-white " type="email" name="email" id="email" placeholder="Email">
+            </div>
+            <span id="emailValadation" class="d-flex justify-content-center"></span>
+        
+            <!-- Password -->
+            <div class="form-group d-flex justify-content-center">
+                <input type="password" class=" bg-transparent text-white " id="password" placeholder="Password">
+            </div>
+            <span id="passValadation" class="d-flex justify-content-center"></span>
+        </form>
+        <div class="form-group d-flex justify-content-center pb-5">
+            <button onclick="Login()" class="btn btn-primary btn-lg active bg-transparent">Log In </button>
+            <a href="../src/signup.html"><button class=" ml-3 btn btn-primary btn-lg active bg-transparent text-mute"> New User</button></a>
+        </div>
+       
+    </div>
+    <script src="../js/login.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

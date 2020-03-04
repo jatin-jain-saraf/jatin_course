@@ -1,0 +1,15 @@
+.container{
+    background-image: url('../img/b.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    margin-top: 10%;
+
+}
+.a{
+    align-items: center;
+}
+    .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+      background-color: #1c66d4 !important; }
+   
+

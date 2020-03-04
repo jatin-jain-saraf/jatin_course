@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+   
+    <link rel="stylesheet" href="../css/signup.css">
+</head>
+<body>
+    <div class="container bg-light text-white"> 
+        <h1 class="text-center pt-5 pb-5 ">Sign In As</h1>
+        <form id="" action="home.html">
+            
+            <div class="  form-group d-flex justify-content-center">
+                <input class="bg-transparent text-white " type="text" name="name" id="name" placeholder="Name">
+            </div>
+            <span id="nameValadation" class="d-flex justify-content-center"></span>
+
+
+
+            <div class="  form-group d-flex justify-content-center">
+                <input class="bg-transparent text-white " type="email" name="email" id="email" placeholder="Email">
+            </div>
+            <span id="emailValadation" class="d-flex justify-content-center"></span>
+            
+
+
+            <div class="form-group d-flex justify-content-center ml-3">
+                <input type="password" class=" bg-transparent text-white " id="password" placeholder="Password">
+                    <span ><i class="far fa-eye"></i></span>
+            </div>
+            <span id="passValadation" class="d-flex justify-content-center"></span>
+
+
+            <div class="form-group d-flex justify-content-center ml-3">
+                <input type="password" class=" bg-transparent text-white " id="confirmPassword" placeholder="Confirm Password">
+                    <span id="eye" ><i class="far fa-eye"></i></span>
+            </div>
+            <span id="conPassValadation" class="d-flex justify-content-center"></span>
+
+
+
+            <div class="  form-group d-flex justify-content-center pb-2">
+                <div class=" btn btn-primary btn- bg-transparent form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="admin" value="admin">
+                    <label class="form-check-label" for="admin">Admin</label>
+                </div>
+                <div class=" btn btn-primary bg-transparent form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="student" value="student">
+                    <label class="form-check-label" for="student">Student</label>
+                </div>
+            </div>
+        </form>
+        <div class="form-group d-flex justify-content-center pb-5">
+            <button onclick="submit()" class="btn btn-primary btn-lg active bg-transparent">Sign In </button>
+        </div>
+    </div>
+    <script src="../js/signup.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
