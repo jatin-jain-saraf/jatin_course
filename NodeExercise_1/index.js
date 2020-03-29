@@ -10,11 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('./html'));
 app.use(helmet());
 app.use(morgan());
-
-//For Routing Of All Apis
 app.use('/data', require('./router/router'));
-
-//To show Html On the Page
 app.get('/', (req, res) => {
     res.sendFile('index.html', { root: __dirname }) 
 });
