@@ -1,0 +1,9 @@
+.container-fluid {
+	padding-top: 5%;
+}
+.container-fluid .row .col table {
+	padding: 2px;
+}
+.container-fluid .update {
+	display: none;
+}
