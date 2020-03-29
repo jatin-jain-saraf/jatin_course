@@ -7,11 +7,11 @@ let id = 0;
 let addbtn = document.getElementById('add');
 let updatebtn = document.getElementById('update');
 let updatedusr;
-let commits;
+let entries;
  
 async function show() {
 		let response = await fetch('http://localhost:3000/data');
-		commits = await response.json(); 
+		entries = await response.json(); 
 		try{
 			console.log('successfully data retrieve')
 		}
@@ -19,10 +19,10 @@ async function show() {
 			console.log('errror in retrieving data',error)
 		}
 	tbody.innerHTML = '';
-	for(let i=0;i<commits.length;i++){
+	for(let i=0;i<entries.length;i++){
 		tbody.innerHTML += `<tr>
-							<td>${commits[i].firstName}</td>
-							<td>${commits[i].lastName}</td>
+							<td>${entries[i].firstName}</td>
+							<td>${entries[i].lastName}</td>
 							<td><span onclick = "edit(${i})"><i class="fas fa-edit text-warning"></i></span></td>
 							<td><span onclick = "del(${i})"><i class="fas fa-trash text-danger"></i></span></td>
 							</tr>`;
@@ -57,9 +57,9 @@ async function edit(i) {
 	try{
 		addbtn.style.display = 'none';
 		updatebtn.style.display = 'initial';
-		docId.value = commits[i]._id; 
-		firstName.value = commits[i].firstName; 
-		lastName.value = commits[i].lastName;
+		docId.value = entries[i]._id; 
+		firstName.value = entries[i].firstName; 
+		lastName.value = entries[i].lastName;
 	}
 	catch (error) {
         console.log('error',error);
@@ -94,7 +94,7 @@ async function update(i) {
 async function del(i) {
 	try {
 		const data = {
-			_id: commits[i]._id        
+			_id: entries[i]._id        
 		};
 
 		await fetch("http://localhost:3000/data/delete", {
